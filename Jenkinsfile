@@ -6,7 +6,7 @@ pipeline{
         AWS_REGION = 'ap-south-1'
         AWS_ACCOUNT_ID = '214206925153'
         ECR_REPO = 'naman/demo-ecs-project'
-        IMAGE_TAG = '1.0'
+        IMAGE_TAG = '2.0'
         IMAGE_NAME = 'doc105b/notes_app'
 
         ECR_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}"
