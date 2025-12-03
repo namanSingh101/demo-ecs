@@ -9,7 +9,7 @@ pipeline{
         IMAGE_TAG = '1.0'
         IMAGE_NAME = 'doc105b/notes_app'
 
-        ECR_URI = '${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}'
+        ECR_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}"
     }
 
     stages{
@@ -39,7 +39,7 @@ pipeline{
         stage('Tag image for ECR'){
             steps{
                 sh """
-                docker tag ${ECR_REPO}:${IMAGE_TAG} ${ECR_URI}:${IMAGE_TAG}
+                docker tag ${IMAGE_NAME}:${IMAGE_TAG} ${ECR_URI}:${IMAGE_TAG}
                 """
             }
         }
